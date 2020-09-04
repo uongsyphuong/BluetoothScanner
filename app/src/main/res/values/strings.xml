@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">BluetoothScan</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="dBm">-%d dBm</string>
+    <string name="filter_dbm">Filter -%d dBm</string>
+    <string name="service_scanning">Service Scanning</string>
+    <string name="scanning">Scanning</string>
+    <string name="last_seen">Last seen: %s</string>
+    <string name="ok">OK</string>
+    <string name="found_device">Found: %d device</string>
+    <string name="found_devices">Found: %d devices</string>
+
+    <!--    User Information-->
+    <string name="name">Name: %s</string>
+    <string name="username">Username: %s</string>
+    <string name="email">Email: %s</string>
+    <string name="address">Address: %s</string>
+    <string name="phone">Phone: %s</string>
+    <string name="website">Website: %s</string>
+    <string name="company">Company name: %s</string>
+
+    <string name="filter">Filter</string>
+    <string name="history">History</string>
+    <string name="user_info">User Info</string>
+    <string name="error">Error</string>
+    <string name="data_is_empty">Data is empty</string>
+    <string name="web_view">Web View</string>
+    <string name="apply_filter">Apply filter</string>
+    <string name="device_named">Device named</string>
+
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="@dimen/image_150dp"
+            android:layout_height="@dimen/image_150dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAvatar"
+            tools:text="Name: Leanne Graham" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="Username: Bret" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername"
+            tools:text="Email: Sincere@something.sg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+            tools:text="Address: 180 Clemenceau Ave, #03-01/04 Haw Par Centre, Singapore 239922" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"
+            tools:text="Phone: +6512345678" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPhone"
+            tools:text="Website: https://www.spdigital.io" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWebsite"
+            tools:text="Company name: SP Digital" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

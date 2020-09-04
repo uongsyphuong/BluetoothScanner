@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/device_named" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.1"
+            android:padding="@dimen/padding_4dp"
+            android:textSize="@dimen/text_size_11sp"
+            tools:text="-100 dBm" />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/rsFilter"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.8"
+            android:contentDescription="@string/app_name"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:values="@array/initial_slider_values" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.1"
+            android:padding="@dimen/padding_4dp"
+            android:textSize="@dimen/text_size_11sp"
+            tools:text="-100 dBm" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnApply"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        android:text="@string/apply_filter" />
+</androidx.appcompat.widget.LinearLayoutCompat>

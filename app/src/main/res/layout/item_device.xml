@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_4dp"
+    app:cardCornerRadius="@dimen/card_4dp"
+    app:cardElevation="@dimen/card_3dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/clContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_8dp"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold"
+                tools:text="Name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMacAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:hint="MAC address" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end|center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRSSI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textStyle="italic"
+                tools:hint="RSSI" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLastSeen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_11sp"
+                android:textStyle="italic"
+                tools:hint="Last seen" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
