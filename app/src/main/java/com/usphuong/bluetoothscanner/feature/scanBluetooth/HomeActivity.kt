@@ -21,6 +21,7 @@ import com.usphuong.bluetoothscanner.Constants.MAX_RSSI
 import com.usphuong.bluetoothscanner.R
 import com.usphuong.bluetoothscanner.data.model.Device
 import com.usphuong.bluetoothscanner.feature.adapter.DeviceAdapter
+import com.usphuong.bluetoothscanner.feature.github.GithubActivity
 import com.usphuong.bluetoothscanner.feature.history.HistoryActivity
 import com.usphuong.bluetoothscanner.feature.userInfo.UserInfoActivity
 import com.usphuong.bluetoothscanner.service.ScanBluetoothService
@@ -136,6 +137,10 @@ class HomeActivity : AppCompatActivity() {
 
                 R.id.navUserInfo -> {
                     startActivity(Intent(this, UserInfoActivity::class.java))
+                }
+
+                R.id.navGithub -> {
+                    startActivity(Intent(this, GithubActivity::class.java))
                 }
             }
             true

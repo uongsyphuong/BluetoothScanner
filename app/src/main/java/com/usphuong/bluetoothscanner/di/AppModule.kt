@@ -3,6 +3,7 @@ package com.usphuong.bluetoothscanner.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.usphuong.bluetoothscanner.viewModel.DeviceViewModel
+import com.usphuong.bluetoothscanner.viewModel.GithubViewModel
 import com.usphuong.bluetoothscanner.viewModel.UserViewModel
 import com.usphuong.bluetoothscanner.viewModel.ViewModelFactory
 import com.usphuong.bluetoothscanner.viewModel.ViewModelKey
@@ -25,4 +26,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(UserViewModel::class)
     abstract fun bindUserViewModel(userViewModel: UserViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(GithubViewModel::class)
+    abstract fun bindGithubViewModel(githubViewModel: GithubViewModel): ViewModel
 }

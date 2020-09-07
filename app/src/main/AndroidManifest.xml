@@ -30,6 +30,7 @@
         <activity android:name=".feature.history.HistoryActivity"/>
         <activity android:name=".feature.userInfo.UserInfoActivity"/>
         <activity android:name=".feature.webView.WebViewActivity" />
+        <activity android:name=".feature.github.GithubActivity"/>
 
         <service android:name=".service.ScanBluetoothService" />
     </application>

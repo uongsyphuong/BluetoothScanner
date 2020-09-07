@@ -6,6 +6,8 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: "com.apollographql.apollo"
+
 android {
     compileSdkVersion 30
     defaultConfig {
@@ -50,6 +52,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildTypes.each {
+        it.buildConfigField('String', "AUTH_TOKEN", '"6e2abf0b5af5b8e3d0ff9d6ef1fa79e80a988183"')
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
@@ -110,4 +121,12 @@ dependencies {
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 
+    // The core runtime dependencies
+    implementation("com.apollographql.apollo:apollo-runtime:2.3.1")
+    // Coroutines extensions for easier asynchronicity handling
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.3.1")
+}
+apollo {
+    // instruct the compiler to generate Kotlin models
+    generateKotlinModels.set(true)
 }
