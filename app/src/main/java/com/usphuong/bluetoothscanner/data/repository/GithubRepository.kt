@@ -2,6 +2,7 @@ package com.usphuong.bluetoothscanner.data.repository
 
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.coroutines.toDeferred
+import com.apollographql.apollo.exception.ApolloException
 import com.usphuong.bluetoothscanner.FindQuery
 import com.usphuong.bluetoothscanner.data.model.Resource
 import java.io.IOException
@@ -16,7 +17,7 @@ class GithubRepository @Inject constructor(private val apolloClient: ApolloClien
                 return Resource.success(response.data)
             }
             "No data"
-        } catch (e: IOException) {
+        } catch (e: ApolloException) {
             e.message ?: "Network call has failed"
         }
         return Resource.error(error)

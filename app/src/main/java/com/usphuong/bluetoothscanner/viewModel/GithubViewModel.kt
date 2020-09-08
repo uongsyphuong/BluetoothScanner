@@ -15,7 +15,7 @@ class GithubViewModel @Inject constructor(private val githubRepository: GithubRe
     val errorLiveData = MutableLiveData<String>()
     val repoLiveData = MutableLiveData<FindQuery.Data?>()
 
-    fun getUserInfo(owner: String, name: String) {
+    fun getRepo(owner: String, name: String) {
         viewModelScope.launch {
             val response = githubRepository.getRepo(owner, name)
             if (response.status == Resource.Status.SUCCESS) {

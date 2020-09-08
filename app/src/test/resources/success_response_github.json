@@ -1,0 +1,10 @@
+{
+  "data": {
+    "repository": {
+      "__typename": "Repository",
+      "name": "BluetoothScanner",
+      "description": null,
+      "url": "https://github.com/uongsyphuong/BluetoothScanner"
+    }
+  }
+}

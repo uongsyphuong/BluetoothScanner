@@ -37,7 +37,7 @@ class GithubActivity : AppCompatActivity(){
         btnQuery.setOnClickListener {
             if (!edtName.text.isNullOrEmpty() &&!edtOwner.text.isNullOrEmpty()){
                 refresh.isRefreshing = true
-                githubViewModel.getUserInfo(edtOwner.text.toString(), edtName.text.toString())
+                githubViewModel.getRepo(edtOwner.text.toString(), edtName.text.toString())
             }
         }
     }
