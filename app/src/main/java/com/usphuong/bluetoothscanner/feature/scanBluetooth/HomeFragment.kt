@@ -36,7 +36,7 @@ import kotlin.math.abs
 
 class HomeFragment : BaseFragment() {
 
-    val deviceViewModel by activityViewModels<DeviceViewModel> { viewModelFactory }
+    val deviceViewModel by activityViewModels<DeviceViewModel>()
 
     private var mBluetoothAdapter: BluetoothAdapter? = null
     private var mBluetoothLeScanner: BluetoothLeScanner? = null

@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_webview.webView
 
 class WebViewFragment : BaseFragment() {
 
-    private val userViewModel by activityViewModels<UserViewModel>{viewModelFactory}
+    private val userViewModel by activityViewModels<UserViewModel>()
 
     override val layoutId: Int
         get() = R.layout.fragment_webview

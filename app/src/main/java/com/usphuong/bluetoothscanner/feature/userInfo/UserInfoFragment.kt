@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_userinfo.tvWebsite
 
 class UserInfoFragment : BaseFragment() {
 
-    private val userViewModel by activityViewModels<UserViewModel> { viewModelFactory }
+    private val userViewModel by activityViewModels<UserViewModel>()
 
     override val layoutId: Int
         get() = R.layout.fragment_userinfo

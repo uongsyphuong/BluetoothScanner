@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_history.tvEmpty
 
 class HistoryFragment : BaseFragment() {
 
-    private val deviceViewModel by viewModels<DeviceViewModel>{viewModelFactory}
+    private val deviceViewModel by viewModels<DeviceViewModel>()
 
     private lateinit var deviceAdapter: DeviceAdapter
 

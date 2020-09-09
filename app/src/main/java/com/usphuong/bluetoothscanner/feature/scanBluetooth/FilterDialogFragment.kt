@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.usphuong.bluetoothscanner.R
 import com.usphuong.bluetoothscanner.viewModel.DeviceViewModel
-import com.usphuong.bluetoothscanner.viewModel.ViewModelFactory
-import dagger.android.support.DaggerDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_filter.btnApply
 import kotlinx.android.synthetic.main.fragment_filter.cbName
 import kotlinx.android.synthetic.main.fragment_filter.rsFilter
@@ -16,12 +16,11 @@ import kotlinx.android.synthetic.main.fragment_filter.tvEnd
 import kotlinx.android.synthetic.main.fragment_filter.tvStart
 import javax.inject.Inject
 
-class FilterDialogFragment : DaggerDialogFragment() {
+@AndroidEntryPoint
+class FilterDialogFragment : DialogFragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
 
-    private val deviceViewModel by activityViewModels<DeviceViewModel> { viewModelFactory }
+    private val deviceViewModel by activityViewModels<DeviceViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

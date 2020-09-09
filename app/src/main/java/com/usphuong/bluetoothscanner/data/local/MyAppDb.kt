@@ -1,6 +1,6 @@
 package com.usphuong.bluetoothscanner.data.local
 
-import android.app.Application
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -20,18 +20,18 @@ abstract class MyAppDb : RoomDatabase() {
         @Volatile
         private var INSTANCE: MyAppDb? = null
 
-        fun getInstance(application: Application): MyAppDb =
+        fun getInstance(context: Context): MyAppDb =
             INSTANCE ?: synchronized(this) {
                 INSTANCE
                     ?: build(
-                        application
+                        context
                     )
                         .also { INSTANCE = it }
             }
 
-        private fun build(application: Application) =
+        private fun build(context: Context) =
             Room.databaseBuilder(
-                application, MyAppDb::class.java,
+                context, MyAppDb::class.java,
                 DB_NAME
             )
                 .build()

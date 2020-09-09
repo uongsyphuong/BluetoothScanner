@@ -4,22 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.usphuong.bluetoothscanner.viewModel.ViewModelFactory
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-abstract class BaseFragment : DaggerFragment(){
+@AndroidEntryPoint
+abstract class BaseFragment : Fragment() {
 
     abstract val layoutId: Int
 
     abstract fun initObserver()
 
     abstract fun initView()
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
 
     lateinit var navController: NavController
 

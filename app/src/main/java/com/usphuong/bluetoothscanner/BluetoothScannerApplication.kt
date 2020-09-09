@@ -1,14 +1,14 @@
 package com.usphuong.bluetoothscanner
 
+import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import com.usphuong.bluetoothscanner.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import dagger.hilt.android.HiltAndroidApp
 
-class BluetoothScannerApplication : DaggerApplication() {
+@HiltAndroidApp
+class BluetoothScannerApplication : Application() {
 
     companion object {
         lateinit var instance: BluetoothScannerApplication
@@ -21,13 +21,6 @@ class BluetoothScannerApplication : DaggerApplication() {
         instance = this
     }
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        val component = DaggerAppComponent.builder()
-            .application(this)
-            .build()
-        component.inject(this)
-        return component
-    }
 
     @Suppress("DEPRECATION")
     fun isNetworkConnected(): Boolean {

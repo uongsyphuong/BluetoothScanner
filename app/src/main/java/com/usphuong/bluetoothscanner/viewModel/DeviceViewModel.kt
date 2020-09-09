@@ -1,5 +1,6 @@
 package com.usphuong.bluetoothscanner.viewModel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,9 +8,8 @@ import com.usphuong.bluetoothscanner.Constants
 import com.usphuong.bluetoothscanner.data.model.Device
 import com.usphuong.bluetoothscanner.data.repository.DeviceRepository
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class DeviceViewModel @Inject constructor(private val deviceRepository: DeviceRepository) :
+class DeviceViewModel @ViewModelInject constructor(private val deviceRepository: DeviceRepository) :
     ViewModel() {
 
     val isFilterChange = MutableLiveData(false)

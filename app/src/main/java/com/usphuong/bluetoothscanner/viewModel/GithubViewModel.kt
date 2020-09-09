@@ -1,5 +1,6 @@
 package com.usphuong.bluetoothscanner.viewModel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,9 +8,8 @@ import com.usphuong.bluetoothscanner.FindQuery
 import com.usphuong.bluetoothscanner.data.model.Resource
 import com.usphuong.bluetoothscanner.data.repository.GithubRepository
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class GithubViewModel @Inject constructor(private val githubRepository: GithubRepository) :
+class GithubViewModel @ViewModelInject constructor(private val githubRepository: GithubRepository) :
     ViewModel() {
 
     val errorLiveData = MutableLiveData<String>()

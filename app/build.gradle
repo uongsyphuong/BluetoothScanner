@@ -8,6 +8,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: "com.apollographql.apollo"
 
+apply plugin: 'dagger.hilt.android.plugin'
+
 android {
     compileSdkVersion 30
     defaultConfig {
@@ -112,12 +114,13 @@ dependencies {
 
     testImplementation "android.arch.core:core-testing:1.1.1"
 
-    //Dagger 2
-    implementation 'com.google.dagger:dagger:2.28.3'
-    kapt 'com.google.dagger:dagger-compiler:2.28.3'
+    //Hilt
+    implementation "com.google.dagger:hilt-android:2.28.3-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28.3-alpha"
 
-    implementation 'com.google.dagger:dagger-android-support:2.28.3'
-    kapt 'com.google.dagger:dagger-android-processor:2.28.3'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
+    kapt "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 

@@ -1,18 +1,22 @@
 package com.usphuong.bluetoothscanner.di
 
-import com.usphuong.bluetoothscanner.BluetoothScannerApplication
+import android.content.Context
 import com.usphuong.bluetoothscanner.data.local.DeviceDao
 import com.usphuong.bluetoothscanner.data.local.MyAppDb
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
+@InstallIn(ApplicationComponent::class)
 @Module
 class DbModule {
     @Provides
     @Singleton
-    fun provideDatabase(application: BluetoothScannerApplication): MyAppDb {
-        return MyAppDb.getInstance(application)
+    fun provideDatabase(@ApplicationContext context: Context): MyAppDb {
+        return MyAppDb.getInstance(context)
     }
 
     @Provides
