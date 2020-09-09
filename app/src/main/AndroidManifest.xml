@@ -19,18 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.scanBluetooth.HomeActivity">
+        <activity android:name=".feature.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".feature.history.HistoryActivity"/>
-        <activity android:name=".feature.userInfo.UserInfoActivity"/>
-        <activity android:name=".feature.webView.WebViewActivity" />
-        <activity android:name=".feature.github.GithubActivity"/>
 
         <service android:name=".service.ScanBluetoothService" />
     </application>

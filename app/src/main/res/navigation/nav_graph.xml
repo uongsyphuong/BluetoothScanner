@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.usphuong.bluetoothscanner.feature.scanBluetooth.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/githubFragment"
+        android:name="com.usphuong.bluetoothscanner.feature.github.GithubFragment"
+        android:label="Github"
+        tools:layout="@layout/fragment_github" />
+
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.usphuong.bluetoothscanner.feature.userInfo.UserInfoFragment"
+        android:label="@string/user_info"
+        tools:layout="@layout/fragment_userinfo">
+        <action
+            android:id="@+id/action_userinfoFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.usphuong.bluetoothscanner.feature.webView.WebViewFragment"
+        android:label="@string/web_view"
+        tools:layout="@layout/fragment_webview">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.usphuong.bluetoothscanner.feature.history.HistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_history" />
+
+    <dialog
+        android:id="@+id/filterFragment"
+        android:name="com.usphuong.bluetoothscanner.feature.scanBluetooth.FilterDialogFragment"
+        android:label="@string/filter"
+        tools:layout="@layout/fragment_filter" />
+
+
+</navigation>
+

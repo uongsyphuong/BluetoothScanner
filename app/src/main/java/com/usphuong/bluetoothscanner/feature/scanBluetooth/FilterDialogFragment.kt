@@ -4,21 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import com.usphuong.bluetoothscanner.R
+import com.usphuong.bluetoothscanner.viewModel.DeviceViewModel
+import com.usphuong.bluetoothscanner.viewModel.ViewModelFactory
+import dagger.android.support.DaggerDialogFragment
 import kotlinx.android.synthetic.main.fragment_filter.btnApply
 import kotlinx.android.synthetic.main.fragment_filter.cbName
 import kotlinx.android.synthetic.main.fragment_filter.rsFilter
 import kotlinx.android.synthetic.main.fragment_filter.tvEnd
 import kotlinx.android.synthetic.main.fragment_filter.tvStart
+import javax.inject.Inject
 
-class FilterDialogFragment : DialogFragment() {
+class FilterDialogFragment : DaggerDialogFragment() {
 
-    companion object {
-        fun newInstance(): FilterDialogFragment {
-            return FilterDialogFragment()
-        }
-    }
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val deviceViewModel by activityViewModels<DeviceViewModel> { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +33,6 @@ class FilterDialogFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupView()
     }
 
@@ -44,14 +46,14 @@ class FilterDialogFragment : DialogFragment() {
     }
 
     private fun setupView() {
-        tvStart.text = getString(R.string.dBm, (activity as? HomeActivity)?.startRSSI)
-        tvEnd.text = getString(R.string.dBm, (activity as? HomeActivity)?.endRSSI)
+        tvStart.text = getString(R.string.dBm, deviceViewModel.startRssi)
+        tvEnd.text = getString(R.string.dBm, deviceViewModel.endRssi)
 
-        cbName.isChecked = (activity as? HomeActivity)?.isFilterName ?: false
+        cbName.isChecked = deviceViewModel.isFilterName
 
         rsFilter.setValues(
-            (activity as? HomeActivity)?.startRSSI?.toFloat(),
-            (activity as? HomeActivity)?.endRSSI?.toFloat()
+            deviceViewModel.startRssi.toFloat(),
+            deviceViewModel.endRssi.toFloat()
         )
 
         rsFilter.addOnChangeListener { rangeSlider, _, _ ->
@@ -60,7 +62,7 @@ class FilterDialogFragment : DialogFragment() {
         }
 
         btnApply.setOnClickListener {
-            (activity as? HomeActivity)?.filterRSSI(
+            deviceViewModel.filterRSSI(
                 rsFilter.values[0].toInt(),
                 rsFilter.values[1].toInt(),
                 cbName.isChecked
